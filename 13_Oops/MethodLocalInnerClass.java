@@ -8,16 +8,14 @@ public class MethodLocalInnerClass {
 class OuterA {
     int outer_x = 50 ; 
     void test() {
-        for(int i = 0; i < 5; i++) {
-            class InnerB {
-                void display() {
-                    System.out.println("display: outer_x = " + outer_x);
-                }
-                
+        class InnerB { //defining inner class in a method
+            void display() {
+                System.out.println("display: outer_x = " + outer_x);
             }
-            InnerB inner = new InnerB();
-            inner.display();
-            
+        }
+        for(int i = 0; i < 5; i++) {
+            InnerB inner = new InnerB(); //creating inner class object
+            inner.display(); //calling inner class method
         }
         
     }
